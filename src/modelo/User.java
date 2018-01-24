@@ -11,6 +11,14 @@ public class User {
     private String place;
     private int points;
 
+    public User() {
+    }
+
+    public User(String username) {
+        this.username = username;
+    }
+    
+    
     public User(String username, String password, int stucoins, int level, String place, int points) {
         this.username = username;
         this.password = password;
@@ -66,6 +74,11 @@ public class User {
 
     public void setPoints(int points) {
         this.points = points;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "username=" + username + ", password=" + password + ", stucoins=" + stucoins + ", level=" + level + ", place=" + place + ", points=" + points + '}';
     }
 
     
