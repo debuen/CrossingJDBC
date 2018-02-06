@@ -1,6 +1,8 @@
 
 package modelo;
 
+import java.util.ArrayList;
+
 
 public class User {
     
@@ -10,14 +12,11 @@ public class User {
     private int level;
     private String place;
     private int points;
+    private ArrayList<Inventory> inventory;
+    private ArrayList<Contact> contacts;
 
     public User() {
     }
-
-    public User(String username) {
-        this.username = username;
-    }
-    
     
     public User(String username, String password, int stucoins, int level, String place, int points) {
         this.username = username;
@@ -26,6 +25,8 @@ public class User {
         this.level = level;
         this.place = place;
         this.points = points;
+        inventory = new ArrayList<>();
+        contacts = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -76,10 +77,30 @@ public class User {
         this.points = points;
     }
 
+    public ArrayList<Inventory> getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(ArrayList<Inventory> inventory) {
+        this.inventory = inventory;
+    }
+
+    public ArrayList<Contact> getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(ArrayList<Contact> contacts) {
+        this.contacts = contacts;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "username=" + username + ", password=" + password + ", stucoins=" + stucoins + ", level=" + level + ", place=" + place + ", points=" + points + '}';
+        return "User{" + "username=" + username + ", password=" + password + ", stucoins=" + stucoins + ", level=" + level + ", place=" + place + ", points=" + points + ", inventory=" + inventory + ", contacts=" + contacts + '}';
     }
+
+    
+
+    
 
     
     
